@@ -86,6 +86,7 @@ available_setting = {
     "text_to_voice": "openai",  # 语音合成引擎，支持openai,baidu,google,pytts(offline),azure,elevenlabs
     "text_to_voice_model": "tts-1",
     "tts_voice_id": "alloy",
+    "answer_voice" : True,
     # baidu 语音api配置， 使用百度语音识别和语音合成时需要
     "baidu_app_id": "",
     "baidu_api_key": "",
@@ -93,8 +94,8 @@ available_setting = {
     # 1536普通话(支持简单的英文识别) 1737英语 1637粤语 1837四川话 1936普通话远场
     "baidu_dev_pid": "1536",
     # azure 语音api配置， 使用azure语音识别和语音合成时需要
-    "azure_voice_api_key": "",
-    "azure_voice_region": "japaneast",
+    "azure_voice_api_key": "2b247c32d7344b13a395c12cc78fd935",
+    "azure_voice_region": "eastus",
     # elevenlabs 语音api配置
     "xi_api_key": "",    #获取ap的方法可以参考https://docs.elevenlabs.io/api-reference/quick-start/authentication
     "xi_voice_id": "",   #ElevenLabs提供了9种英式、美式等英语发音id，分别是“Adam/Antoni/Arnold/Bella/Domi/Elli/Josh/Rachel/Sam”
@@ -158,6 +159,10 @@ available_setting = {
     "linkai_api_key": "",
     "linkai_app_code": "",
     "linkai_api_base": "https://api.link-ai.chat",  # linkAI服务地址，若国内无法访问或延迟较高可改为 https://api.link-ai.tech
+    # dify
+    "use_dify": False,
+    "dify_api_key": "",
+    "dify_api_url": "",
 }
 
 

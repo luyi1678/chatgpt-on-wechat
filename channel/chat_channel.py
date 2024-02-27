@@ -12,6 +12,7 @@ from channel.channel import Channel
 from common.dequeue import Dequeue
 from common import memory
 from plugins import *
+from config import conf
 
 try:
     from voice.audio_convert import any_to_wav

@@ -19,6 +19,7 @@ class Bridge(object):
             "translate": conf().get("translate", "baidu"),
         }
         model_type = conf().get("model") or const.GPT35
+        logger.info("model_type: {}".format(model_type))
         if model_type in ["text-davinci-003"]:
             self.btype["chat"] = const.OPEN_AI
         if conf().get("use_azure_chatgpt", False):
@@ -43,6 +44,14 @@ class Bridge(object):
 
         if model_type in ["claude"]:
             self.btype["chat"] = const.CLAUDEAI
+
+        if conf().get("use_dify") and conf().get("dify_api_key"):
+            self.btype["chat"] = const.DIFY
+            if not conf().get("voice_to_text") or conf().get("voice_to_text") in ["openai"]:
+                self.btype["voice_to_text"] = const.DIFY
+            if not conf().get("text_to_voice") or conf().get("text_to_voice") in ["openai", const.TTS_1, const.TTS_1_HD]:
+                self.btype["text_to_voice"] = const.DIFY
+
         self.bots = {}
         self.chat_bots = {}
 

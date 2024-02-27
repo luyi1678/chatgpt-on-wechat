@@ -43,7 +43,8 @@ class PluginManager:
         return wrapper
 
     def save_config(self):
-        with open("./plugins/plugins.json", "w", encoding="utf-8") as f:
+        config_path = "/tmp/plugins.json"
+        with open(config_path, "w", encoding="utf-8") as f:
             json.dump(self.pconf, f, indent=4, ensure_ascii=False)
 
     def load_config(self):

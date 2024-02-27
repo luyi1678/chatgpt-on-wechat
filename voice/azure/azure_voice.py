@@ -25,6 +25,7 @@ Azure voice
 
 class AzureVoice(Voice):
     def __init__(self):
+        self.speech_config = None  # Default fallback value
         try:
             curdir = os.path.dirname(__file__)
             config_path = os.path.join(curdir, "config.json")
@@ -57,6 +58,9 @@ class AzureVoice(Voice):
             logger.warn("AzureVoice init failed: %s, ignore " % e)
 
     def voiceToText(self, voice_file):
+        if not self.speech_config:
+            logger.error("[Azure] speech_config is not initialized.")
+            return Reply(ReplyType.ERROR, "Initialization failed")
         audio_config = speechsdk.AudioConfig(filename=voice_file)
         speech_recognizer = speechsdk.SpeechRecognizer(speech_config=self.speech_config, audio_config=audio_config)
         result = speech_recognizer.recognize_once()

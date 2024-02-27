@@ -174,5 +174,9 @@ class Query:
                 msg=wechatcom_msg,
             )
             if context:
+                receiver = context["receiver"]
+                # Send the initial reply "AI思考中, 请耐心等待~~"
+                initial_reply = Reply(ReplyType.TEXT, 'AI思考中, 请耐心等待~~')
+                channel.client.message.send_text(channel.agent_id, receiver, initial_reply.content)
                 channel.produce(context)
         return "success"

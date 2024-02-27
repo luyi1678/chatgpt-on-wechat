@@ -2,14 +2,17 @@ version: '2.0'
 services:
   chatgpt-on-wechat:
     image: zhayujie/chatgpt-on-wechat
-    container_name: chatgpt-on-wechat
+    container_name: ww-chatgpt-on-wechat
     security_opt:
       - seccomp:unconfined
+    volumes:
+      - ../:/app
+    working_dir: /app
+    ports:
+      - 9898:9898
     environment:
-      OPEN_AI_API_KEY: 'YOUR API KEY'
-      MODEL: 'gpt-3.5-turbo'
       PROXY: ''
-      SINGLE_CHAT_PREFIX: '["bot", "@bot"]'
+      SINGLE_CHAT_PREFIX: '["", "bot", "@bot"]'
       SINGLE_CHAT_REPLY_PREFIX: '"[bot] "'
       GROUP_CHAT_PREFIX: '["@bot"]'
       GROUP_NAME_WHITE_LIST: '["ChatGPT测试群", "ChatGPT测试群2"]'
@@ -22,3 +25,15 @@ services:
       USE_LINKAI: 'False'
       LINKAI_API_KEY: ''
       LINKAI_APP_CODE: ''
+      CHANNEL_TYPE: "wechatcom_app"
+      # 企业微信->我的企业->企业ID
+      WECHATCOM_CORP_ID: "wwc83daf9ece94921c"
+      #企业微信->应用管理->新创建的应用->Secret
+      WECHATCOMAPP_SECRET: "A1rv-kzaV_3XdxxXCm45C5kZF5aVs_wDbaUFnPAJJZ8"
+      #企业微信->应用管理->新创建的应用->AgentId
+      WECHATCOMAPP_AGENT_ID: "1000002"
+      #企业微信->应用管理->新创建的应用->接收消息->设置API接收->Token
+      WECHATCOMAPP_TOKEN: "uCbPkNRGRcz9E6epYQOaQEV3SgMJpjj"
+      #企业微信->应用管理->新创建的应用->接收消息->设置API接收->EncodingAESKey
+      WECHATCOMAPP_AES_KEY: "LfhapuI5FO61sUsLr2tOGsYmU2vVA2o896KekqCqoUb"
+      WECHATCOMAPP_PORT: 9898

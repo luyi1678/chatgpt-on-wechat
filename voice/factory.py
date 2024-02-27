@@ -42,4 +42,12 @@ def create_voice(voice_type):
         from voice.ali.ali_voice import AliVoice
 
         return AliVoice()
+    elif voice_type == "dify":
+        from voice.openai.openai_voice import OpenaiVoice
+
+        return OpenaiVoice()
+        # from voice.dify.dify_voice import DifyVoice
+        #
+        # return DifyVoice()
+
     raise RuntimeError

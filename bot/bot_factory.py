@@ -56,5 +56,9 @@ def create_bot(bot_type):
         from bot.zhipuai.zhipuai_bot import ZHIPUAIBot
         return ZHIPUAIBot()
 
+    elif bot_type == const.DIFY:
+        from bot.dify.dify_bot import DifyBot
+        return DifyBot()
+
 
     raise RuntimeError
