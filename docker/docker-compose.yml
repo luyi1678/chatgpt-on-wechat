@@ -27,13 +27,13 @@ services:
       LINKAI_APP_CODE: ''
       CHANNEL_TYPE: "wechatcom_app"
       # 企业微信->我的企业->企业ID
-      WECHATCOM_CORP_ID: "wwc83daf9ece94921c"
+      WECHATCOM_CORP_ID: ""
       #企业微信->应用管理->新创建的应用->Secret
-      WECHATCOMAPP_SECRET: "A1rv-kzaV_3XdxxXCm45C5kZF5aVs_wDbaUFnPAJJZ8"
+      WECHATCOMAPP_SECRET: ""
       #企业微信->应用管理->新创建的应用->AgentId
-      WECHATCOMAPP_AGENT_ID: "1000002"
+      WECHATCOMAPP_AGENT_ID: ""
       #企业微信->应用管理->新创建的应用->接收消息->设置API接收->Token
-      WECHATCOMAPP_TOKEN: "uCbPkNRGRcz9E6epYQOaQEV3SgMJpjj"
+      WECHATCOMAPP_TOKEN: ""
       #企业微信->应用管理->新创建的应用->接收消息->设置API接收->EncodingAESKey
-      WECHATCOMAPP_AES_KEY: "LfhapuI5FO61sUsLr2tOGsYmU2vVA2o896KekqCqoUb"
+      WECHATCOMAPP_AES_KEY: ""
       WECHATCOMAPP_PORT: 9898
